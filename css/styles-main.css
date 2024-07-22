@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: secretfont;
+    src: url("../fonts/Hacked.ttf");
+}
+
+body{
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    background: #222121;
+    color: #000000;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.choose-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.choose-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    background: #444748;
+    border-radius: 20px;
+}
+
+.lng-choose{
+    color:rgb(242, 248, 252);
+    font-family: secretfont;
+    font-size: 50px;
+}

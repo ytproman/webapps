@@ -1,0 +1,231 @@
+img{
+    margin-top: -60px;
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/mines-img/back-mines.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #00004A;
+    text-align: center;
+    color:aliceblue;
+}
+h1,h2,div{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.fig {
+    display: block; 
+    text-align: center; 
+    font-style: italic; 
+    margin-top: 5%; 
+    margin-bottom: 5px; 
+    background-color: hsla(253, 100%, 20%, 0.534);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    backdrop-filter: blur(5px);
+}
+.btn{
+    margin-top: 10px;
+    font-size: 40px;
+    background-color: #E87025; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    box-shadow: 0px 1px 8px 2px #934718;
+}
+.name{
+    margin-top:20px;
+}
+.name, .undername{
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btn2{
+    margin-top: 10px;
+    font-size: 30px;
+    background-color: #E87025; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    width: 130px;
+    box-shadow: 0px 0px 8px 1px #934718;
+}
+.back{
+    margin: auto;
+    background-color: #000C39;
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.load{
+    width:150px;
+    height:150px;
+}
+@media(max-width:1200px){
+}
+@media(max-width:1000px){
+}
+@media(max-width:720px){
+}
+@media(max-width:480px){
+    .name, .undername{
+        font-size: 33px;
+    }
+    body{
+        background-image: url("../img/mines-img/back-mines4.png");
+    }
+    img{
+        margin-top: -55px;
+        height: 320px;
+        width: 320px;
+    }
+    .back{
+        height: 320px;
+        width: 320px;
+    }
+    .btn{
+        font-size: 35px;
+    }
+}
+@media(max-width:400px){
+    .name, .undername{
+        font-size: 29px;
+    }
+    body{
+        background-image: url("../img/mines-ing/back-mines3.png");
+    }
+    img{
+        margin-top: -50px;
+        height: 330px;
+        width: 330px;
+    }
+    .btn{
+        font-size: 30px;
+    }
+    .back{
+        height: 330px;
+        width: 330px;
+    }
+}
+@media(max-width:370px){
+    .name, .undername{
+        font-size: 29px;
+    }
+    body{
+        background-image: url("../img/mines-img/back-mines2.png");
+    }
+    .btn{
+        font-size: 25px;
+    }
+    img{
+        margin-top: -45px;
+        height: 280px;
+        width: 280px;
+    }
+    .back{
+        height: 280px;
+        width: 280px;
+    }
+}
+@media(max-width:300px){
+    .name, .undername{
+        font-size: 27px;
+    }
+    .btn{
+        font-size: 20px;
+    }
+    img{
+        margin-top: -40px;
+        height: 255px;
+        width: 255px;
+    }
+    .back{
+        height: 255px;
+        width: 255px;
+    }
+}
+@-webkit-keyframes bounce-arrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@-moz-keyframes bounce-arrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bounce-arrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.arrow {
+    -webkit-animation: bounce-arrow 1.3s infinite ease-in-out;
+    -moz-animation: bounce-arrow 1.3s infinite ease-in-out;
+    -o-animation: bounce-arrow 1.3s infinite ease-in-out;
+    animation: bounce-arrow 1.3s infinite ease-in-out;
+}
+
+.btn {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
