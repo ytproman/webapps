@@ -36,6 +36,37 @@ h1,h2,div{
     padding: 10px;
     backdrop-filter: blur(5px);
 }
+a{
+    text-decoration: none;
+}
+.btn-back{
+    margin: 0px auto;
+    display: grid;
+    place-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    height: 50px;
+    width: 60%;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 24px;
+    color: var(--text-color);
+    transition-duration: .2s;
+    transition-property: background-size, box-shadow;
+    background: var(--bg-gradient);
+    box-shadow: 0 0 #0000;
+    background-size: 100% 100%;
+    position: relative;
+    border: none;
+    border-radius: var(--radius);
+    background-color: #ACE309;
+    border-radius: 12px;
+    color: black;
+    font-weight: 600;
+    margin-top: 20px;
+}
 .btn{
     margin: 0px auto;
     display: grid;

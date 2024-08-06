@@ -8,6 +8,7 @@ const sleep = async (millsecs)=>{
 
 const generate = ()=>{
     document.getElementById('btn0').style.display='none';
+    document.getElementById('btn00').style.display='none';
     document.getElementById('btn1').style.display='inline-block';
     document.getElementById('btn3').style.display='inline-block';
     document.getElementById('btn5').style.display='inline-block';
@@ -50,6 +51,7 @@ const signal3 = async ()=>{
     document.getElementById('image2').style.marginTop=0;
     document.getElementById('image2').style.display='inline-block';
     document.getElementById('btn0').style.display='inline-block';
+    document.getElementById('btn00').style.display='inline-block';
     document.getElementById('image2').src=path;
 }
 
@@ -65,6 +67,7 @@ const signal5 = async ()=>{
     document.getElementById('image2').style.marginTop=0;
     document.getElementById('image2').style.display='inline-block';
     document.getElementById('btn0').style.display='inline-block';
+    document.getElementById('btn00').style.display='inline-block';
     document.getElementById('image2').src=path;
 }
 
@@ -80,5 +83,6 @@ const signal7 = async ()=>{
     document.getElementById('image2').style.marginTop=0;
     document.getElementById('image2').style.display='inline-block';
     document.getElementById('btn0').style.display='inline-block';
+    document.getElementById('btn00').style.display='inline-block';
     document.getElementById('image2').src=path;
 }

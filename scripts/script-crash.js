@@ -29,12 +29,14 @@ const change = async (path)=>{
     document.getElementById('printSignal').style.display='inline-block';
     document.getElementById('image2').style.display='inline-block';
     document.getElementById('btn0').style.display='inline-block';
+    document.getElementById('btn00').style.display='inline-block';
     document.getElementById('image2').src=path;
 }
 
 const generate = async ()=>{
     hide()
     document.getElementById('btn0').style.display='none';
+    document.getElementById('btn00').style.display='none';
     let receivingSignal = getRandomFloat(1.00, 3.99, 2);
     if ((receivingSignal.toString().length == 3)) {
         receivingSignal += "0";

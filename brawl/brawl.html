@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <script src="../scripts/script-brawl.js"></script>
+    <link rel="stylesheet" href="../css/styles-brawl.css">
+    <title>Черепа</title>
+</head>
+<body>
+    <div class="container">
+        <img src="../img/brawl-img/1.png" alt="Череп 1" id="skull1">
+        <img src="../img/brawl-img/1.png" alt="Череп 2" id="skull2">
+        <img src="../img/brawl-img/1.png" alt="Череп 3" id="skull3">
+        <img src="../img/brawl-img/3.png" alt="Алмаз" id="diamond" class="diamond" style="display: none;">
+    </div>
+    <div class="button-container">
+    <button class="start-button" onclick="openModal()">START</button>
+    <a href="../index.html"><button class="return-button">BACK</button></a>
+</div>
+    <div id="modal">
+        <div class="modal-content">
+             <button class="close-button" onclick="closeModal()">&#10005;</button>
+            <p class="hash-id-text">GAME HASH ID</p>
+            <input type="text" id="hashIdInput" placeholder="Введите hash id" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Введите hash id'">
+            <button class="modal-button" onclick="validateAndStartShuffle()">OK</button>
+        </div>
+    </div>
+    <div id="message"></div> <!-- Область для сообщений -->
+</body>
+</html>
