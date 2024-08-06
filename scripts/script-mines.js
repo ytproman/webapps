@@ -26,7 +26,7 @@ const hide = ()=>{
 
 const signal1 = async ()=>{
     hide()
-    path = "../img/mines-img/1/"+Math.floor(Math.random() * 40)+".jpg"
+    path = "../../img/mines-img/1/"+Math.floor(Math.random() * 40)+".jpg"
     document.getElementById('image2').style.display='none';
     document.getElementById('image1').style.display='none';
     document.getElementById('image3').style.marginTop="83px";
@@ -41,7 +41,7 @@ const signal1 = async ()=>{
 
 const signal3 = async ()=>{
     hide()
-    path = "../img/mines-img/3/"+Math.floor(Math.random() * 48)+".jpg"
+    path = "../../img/mines-img/3/"+Math.floor(Math.random() * 48)+".jpg"
     document.getElementById('image2').style.display='none';
     document.getElementById('image1').style.display='none';
     document.getElementById('image3').style.marginTop="83px";
@@ -57,7 +57,7 @@ const signal3 = async ()=>{
 
 const signal5 = async ()=>{
     hide()
-    path = "../img/mines-img/5/"+Math.floor(Math.random() * 40)+".jpg"
+    path = "../../img/mines-img/5/"+Math.floor(Math.random() * 40)+".jpg"
     document.getElementById('image2').style.display='none';
     document.getElementById('image1').style.display='none';
     document.getElementById('image3').style.marginTop="83px";

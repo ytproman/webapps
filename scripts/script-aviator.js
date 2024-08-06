@@ -45,6 +45,6 @@ const generate = async ()=>{
         receivingSignal += ".00";
     }
     printSignal.innerHTML = `${receivingSignal}${"x"}`;
-    path = "../img/aviator-img/circle.png"
+    path = "../../img/aviator-img/circle.png"
     change(path)
 }
