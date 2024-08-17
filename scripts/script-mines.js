@@ -73,7 +73,7 @@ const signal5 = async ()=>{
 
 const signal7 = async ()=>{
     hide()
-    path = "../img/mines-img/7/"+Math.floor(Math.random() * 39)+".jpg"
+    path = "../../img/mines-img/7/"+Math.floor(Math.random() * 39)+".jpg"
     document.getElementById('image2').style.display='none';
     document.getElementById('image1').style.display='none';
     document.getElementById('image3').style.marginTop="83px";
