@@ -1,28 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviator</title>
+    <link rel="stylesheet" href="../../css/styles-aviator.css">
+</head>
+<body class="page">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../../scripts/script-aviator.js"></script>
-        <link rel="stylesheet" href="../../css/styles-aviator.css">
-    </head>
-
-    <body>
-        <div class="background">
-        <h1 class="name">AVIATOR SIGNALS</h1>
-        <h2 class="undername">@JugoKazik_bot</h2>
-        <div class="fig">
-            <div class="back" id="back">
-                <span id="printSignal" class="random"></span>
-                <img id="image3" class="load" style="display:none" src="../../img/aviator-img/load-aviator.gif">
-                <img id="image2" style="display:none" src="../../img/animation/arrow.png">
-                <img id="image1" src="../../img/animation/arrow.png" class="arrow">
-            </div>
-            <button class="btn" id="btn0" onclick=generate();>GET SIGNAL</button>
-            <a href="../../index.html"><button id="btn00" class="btn-back">BACK</button></a>
-        </div>
+    <div class="loader">
+        <div class="bar"></div>
     </div>
-    </body>
 
+    
+    
+   
+    <div class="cv">
+        <img class="obloko" src="../../img/aviator-img/obl.svg">
+    </div>
+
+    
+  
+   
+    <div class="winner">
+        <img  class="luck" src="../../img/aviator-img/avia_logo.svg">
+        <img class="win" src="../../img/aviator-img/1win_logo.png">
+    </div>
+
+
+    <div class="rocket">
+        <button id="startButton" class="button" onclick="generateRandomNumber()">GET SIGNAL</button>
+        <button id="startButton" class="button2" ><a href="../../index.html" style="text-decoration: none; color: white;">BACK</a></button>
+        <p id="time" class="timer"></p>
+        <p id="chance" class="ch"></p>
+        <p id="timers" class="timerss"></p>
+        <p class="ti">Time:</p>
+        <p class="sh">Chance:</p>
+        <p class="tg">Before the signal:</p>
+        <img class="rocket__boy" src="../../img/aviator-img/avia3.svg"/>
+
+       
+        <div class="section"></div>
+        <div class="section2"></div>
+        <div class="section3"></div>
+        
+
+
+        
+    <script src="../../scripts/script-aviator.js"></script>
+   
+    <div id="result" class="rand"></div>
+    
+
+</body>
 </html>

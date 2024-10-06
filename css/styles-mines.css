@@ -1,245 +1,474 @@
-img{
-    margin-top: -60px;
-    height: 350px;
-    width: 350px;
-    border-radius: 10px;
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/intro.otf') format('opentype');
 }
-body{
-    padding: 0;
+
+body {
     margin: 0;
-    background-image: url("../img/mines-img/back-mines.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #00004A;
-    text-align: center;
-    color:aliceblue;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Arial', sans-serif;
 }
-h1,h2,div{
-    margin-bottom: 0;
-    margin-top: 0;
+
+/* Стили для экранов с длиной больше 650px */
+@media (min-height: 650px) {
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+
+    #container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 2%;
+        width: 80vw;
+        height: 80vw;
+        max-width: 600px;
+        max-height: 600px;
+        background-color: #1c2530;
+        border-radius: 20px;
+        padding: 3%;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto 20px auto;
+    }
+
+    .square-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .square {
+        width: 100%;
+        height: 100%;
+        background-color: #238fa9;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .icon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    #trap-selector {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 80vw;
+        max-width: 600px;
+        background-color: #2a3a4a;
+        border-radius: 15px;
+        padding: 10px 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .trap-btn {
+        background: linear-gradient(145deg, #238fa9, #1b6c7f);
+        border: none;
+        color: white;
+        font-size: 28px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 15px;
+        user-select: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .trap-btn:hover {
+        background: linear-gradient(145deg, #1b6c7f, #145965);
+        transform: translateY(-3px);
+    }
+
+    #trap-count {
+        font-size: 36px;
+        color: white;
+        font-weight: bold;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    #explodeButton, #closeButton {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 18px;
+        color: white;
+        background-color: #238fa9;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 80vw;
+        max-width: 600px;
+        font-family: 'Intro';
+    }
+
+    #explodeButton:hover, #closeButton:hover {
+        background-color: #1b6c7f;
+        transform: translateY(-3px);
+    }
+
+    #notification {
+        display: none;
+        color: white;
+        background-color: #1b6c7f;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        font-style: italic;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80vw;
+        max-width: 600px;
+        animation: slideDown 0.5s ease forwards;
+    }
+
+    #notification.fade-out {
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    #progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        background-color: #ff1744;
+        width: 0;
+    }
 }
-.fig {
-    display: block; 
-    text-align: center; 
-    font-style: italic; 
-    margin-top: 5%; 
-    margin-bottom: 5px; 
-    background-color: hsla(253, 100%, 20%, 0.534);
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    backdrop-filter: blur(5px);
+
+/* Стили для экранов с длиной меньше или равной 650px */
+@media (max-height: 650px) {
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+
+    #container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 2%;
+        width: 70vw;
+        height: 70vw;
+        max-width: 300px;
+        max-height: 300px;
+        background-color: #1c2530;
+        border-radius: 20px;
+        padding: 3%;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto 20px auto;
+    }
+
+    .square-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .square {
+        width: 100%;
+        height: 100%;
+        background-color: #238fa9;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .icon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    #trap-selector {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 70vw;
+        max-width: 300px;
+        background-color: #2a3a4a;
+        border-radius: 15px;
+        padding: 10px 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .trap-btn {
+        background: linear-gradient(145deg, #238fa9, #1b6c7f);
+        border: none;
+        color: white;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 15px;
+        user-select: none;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .trap-btn:hover {
+        background: linear-gradient(145deg, #1b6c7f, #145965);
+        transform: translateY(-3px);
+    }
+
+    #trap-count {
+        font-size: 36px;
+        color: white;
+        font-weight: bold;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    #explodeButton, #closeButton {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 16px;
+        color: white;
+        background-color: #238fa9;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 70vw;
+        max-width: 300px;
+        font-family: 'Intro';
+    }
+
+    #explodeButton:hover, #closeButton:hover {
+        background-color: #1b6c7f;
+        transform: translateY(-3px);
+    }
+
+    #notification {
+        display: none;
+        color: white;
+        background-color: #1b6c7f;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        font-style: italic;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 80vw;
+        max-width: 600px;
+        animation: slideDown 0.5s ease forwards;
+    }
+
+    #notification.fade-out {
+        animation: slideUp 0.5s ease forwards;
+    }
+
+    #progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        background-color: #ff1744;
+        width: 0;
+    }
 }
-.btn{
-    margin-top: 20px;
-    font-size: 40px;
-    background-color: #E87025; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 15px;
-    box-shadow: 0px 1px 8px 2px #934718;
+
+canvas#particleCanvas {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+pointer-events: none;
 }
-.btn-back{
-    margin-top: 20px;
-    font-size: 25px;
-    background-color: #E87025; /* Green */
-    border: none;
-    color: white;
+header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 15px;
-    width:50%;
-    box-shadow: 0px 1px 8px 2px #934718;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-family: 'Intro', Arial, sans-serif;
+    box-sizing: border-box;
+    font-size: 24px;
 }
-.name{
-    margin-top:20px;
+header img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
 }
-.name, .undername{
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.tab {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+    border-radius: 50px;
+    height: 70px; /* Фиксированная высота для десктопа */
 }
 
-.btn2{
-    margin-top: 10px;
-    font-size: 30px;
-    background-color: #E87025; /* Green */
+.tab button {
+    background-color: inherit;
+    flex: 1 0 auto;
+    margin: 0 10px;
     border: none;
-    color: white;
-    padding: 15px 32px;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    transition: 0.3s;
+    color: #fff;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 15px;
-    width: 130px;
-    box-shadow: 0px 0px 8px 1px #934718;
-}
-.back{
-    margin: auto;
-    background-color: #000C39;
-    height: 350px;
-    width: 350px;
-    border-radius: 10px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Intro', Arial, sans-serif;
 }
 
-.load{
-    width:150px;
-    height:150px;
+.tab button img {
+    max-width: 38px;
+    height: 38px;
 }
-@media(max-width:1200px){
+
+.tab button:hover {
+    background-color: #555;
+    transform: translateY(-2px);
 }
-@media(max-width:1000px){
+
+.tab button.active {
+    background-color: #666;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
-@media(max-width:720px){
-}
-@media(max-width:480px){
-    .name, .undername{
-        font-size: 33px;
-    }
-    body{
-        background-image: url("../img/mines-img/back-mines4.png");
-    }
-    img{
-        margin-top: -55px;
-        height: 320px;
-        width: 320px;
-    }
-    .back{
-        height: 320px;
-        width: 320px;
-    }
-    .btn{
-        font-size: 35px;
-    }
-}
-@media(max-width:400px){
-    .name, .undername{
-        font-size: 29px;
-    }
-    body{
-        background-image: url("../img/mines-ing/back-mines3.png");
-    }
-    img{
-        margin-top: -50px;
-        height: 330px;
-        width: 330px;
-    }
-    .btn{
-        font-size: 30px;
-    }
-    .back{
-        height: 330px;
-        width: 330px;
-    }
-}
-@media(max-width:370px){
-    .name, .undername{
-        font-size: 29px;
-    }
-    body{
-        background-image: url("../img/mines-img/back-mines2.png");
-    }
-    .btn{
-        font-size: 25px;
-    }
-    img{
-        margin-top: -45px;
-        height: 280px;
-        width: 280px;
-    }
-    .back{
-        height: 280px;
-        width: 280px;
-    }
-}
-@media(max-width:300px){
-    .name, .undername{
-        font-size: 27px;
-    }
-    .btn{
-        font-size: 20px;
-    }
-    img{
-        margin-top: -40px;
-        height: 255px;
-        width: 255px;
-    }
-    .back{
-        height: 255px;
-        width: 255px;
-    }
-}
-@-webkit-keyframes bounce-arrow {
-    0% {
-        transform: translateY(0);
+
+/* Медиазапросы для адаптации на мобильных устройствах */
+@media (max-width: 768px) {
+    .tab {
+        height: 70px; /* Фиксированная высота для планшетов */
     }
 
-    50% {
-        transform: translateY(30px);
+    .tab button {
+        margin: 0 5px;
+        padding: 10px 15px;
+        font-size: 14px;
     }
 
-    100% {
-        transform: translateY(0px);
+    .tab button img {
+        max-width: 32px;
+        height: 32px;
     }
 }
 
-@-moz-keyframes bounce-arrow {
-    0% {
-        transform: translateY(0);
+@media (max-width: 480px) {
+    .tab {
+        height: 70px; /* Фиксированная высота для мобильных устройств */
     }
 
-    50% {
-        transform: translateY(30px);
+
+    .tab button {
+        margin: 0 3px;
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes bounce-arrow {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(30px);
-    }
-
-    100% {
-        transform: translateY(0px);
+    .tab button img {
+        max-width: 28px;
+        height: 28px;
     }
 }
 
-.arrow {
-    -webkit-animation: bounce-arrow 1.3s infinite ease-in-out;
-    -moz-animation: bounce-arrow 1.3s infinite ease-in-out;
-    -o-animation: bounce-arrow 1.3s infinite ease-in-out;
-    animation: bounce-arrow 1.3s infinite ease-in-out;
+/* Убираем синий эффект выделения при нажатии на мобильных устройствах */
+button, select, input, textarea, a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+    outline: none;
 }
 
-.btn {
-    animation-name: pulse;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.07);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+* {
+    -webkit-tap-highlight-color: transparent; /* Убирает подсветку при нажатии на любом элементе */
+    -webkit-touch-callout: none; /* Отключает вызов меню на долгий тап */
 }
