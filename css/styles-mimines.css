@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Intro';
-    src: url('fonts/intro.otf') format('opentype');
+    src: url('../fonts/intro.otf') format('opentype');
 }
 body {
     margin: 0;
