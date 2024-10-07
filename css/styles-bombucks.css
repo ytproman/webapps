@@ -263,6 +263,50 @@ header img {
     }
 }
 
+.notification {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 15px;
+    background: #1F1F1F;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s, top 0.5s;
+    font-family: 'Intro', Arial, sans-serif;
+    color: white;
+}
+
+.notification-content {
+    text-align: center;
+}
+
+.notification-text {
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Intro', sans-serif;
+    margin-bottom: 20px;  /* Добавляем отступ до кнопки */
+}
+
+.notification button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #66a6ff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Intro', sans-serif;
+}
+
+.notification button:hover {
+    background-color: #5591cc;
+}
+
 /* Убираем синий эффект выделения при нажатии на мобильных устройствах */
 button,
 select,
@@ -280,3 +324,4 @@ a {
     -webkit-touch-callout: none;
     /* Отключает вызов меню на долгий тап */
 }
+

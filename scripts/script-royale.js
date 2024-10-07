@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < numRows; i++) {
             const newRow = document.createElement('div');
             newRow.className = 'row';
-            for (let j = 0; j < 6; j++) {
+            for (let j = 0; j < 6; j++) { 
                 const newSquare = document.createElement('div');
                 newSquare.className = 'square';
                 newRow.appendChild(newSquare);

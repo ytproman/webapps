@@ -122,13 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   playButton.addEventListener('click', () => {
       if (dotsCount >= maxDots) {
-          alert('Game end!');
-          return;
+        showNotification() 
+        return;
       }
 
       if (dotsCount < numRows) {
           placeDot(dotsCount);
-      } else {
+      } else { 
           removeRowWithDot();
           addRowWithDot();
       }
@@ -248,3 +248,22 @@ document.addEventListener('touchend', function (event) {
   }
   lastTouchEnd = now;
 }, false);
+
+function closeNotification() {
+    const notification = document.getElementById('notification');
+    notification.style.opacity = '0';
+    notification.style.top = '10%';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 500);
+}
+
+function showNotification() {
+    const notification = document.getElementById('notification');
+    notification.style.display = 'block';
+    notification.style.top = '10%';
+    setTimeout(() => {
+        notification.style.opacity = '1';
+        notification.style.top = '20%';
+    }, 10);
+ }
