@@ -1,6 +1,6 @@
 $(document).ready(function() {
     let trapCount = 3;
-    const validTrapCounts = [1, 3, 5, 7]; // Допустимые значения для ловушек
+    const validTrapCounts = [2, 3, 5, 7]; // Допустимые значения для ловушек
     const container = $('#container1');
     let lastClickTime = 0; // Переменная для хранения времени последнего клика
     const notificationInterval = 5000; // Интервал в миллисекундах (5 секунд)
@@ -82,8 +82,8 @@ $(document).ready(function() {
         const audio = new Audio('/static/startest.mp3'); // Путь к вашему звуку
         let starCount;
         switch (trapCount) {
-            case 1:
-                starCount = 10;
+            case 2:
+                starCount = 8;
                 break;
             case 3:
                 starCount = 5;
