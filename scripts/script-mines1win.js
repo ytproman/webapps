@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let trapCount = 3;
     const validTrapCounts = [1, 3, 5, 7]; // Допустимые значения для ловушек
-    const container = $('#container');
+    const container = $('#container1');
     let lastClickTime = 0; // Переменная для хранения времени последнего клика
     const notificationInterval = 5000; // Интервал в миллисекундах (5 секунд)
 
@@ -41,12 +41,12 @@ $(document).ready(function() {
     }
 
     // Обработчики для кнопок плюс и минус
-    $('#trap-minus').click(function() {
+    $('#trap-minus1').click(function() {
         triggerHapticFeedback();
         updateTrapCount(false);
     });
 
-    $('#trap-plus').click(function() {
+    $('#trap-plus1').click(function() {
         triggerHapticFeedback();
         updateTrapCount(true);
     });
@@ -118,7 +118,7 @@ $(document).ready(function() {
         });
     }
     function showNotification(message) {
-        const notification = $('#notification');
+        const notification = $('#notification1');
         const progressBar = $('#progress-bar');
 
         // Устанавливаем сообщение и показываем уведомление

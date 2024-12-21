@@ -40,7 +40,7 @@ body {
         }
     }
 
-    #container {
+    #container1 {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
@@ -84,7 +84,7 @@ body {
         z-index: 1;
     }
 
-    #trap-selector {
+    #trap-selector1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -100,7 +100,7 @@ body {
         margin: 0 auto;
     }
 
-    .trap-btn {
+    .trap-btn1 {
         background: linear-gradient(145deg, #a96823, #7e4a12);
         border: none;
         color: white;
@@ -117,7 +117,7 @@ body {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .trap-btn:hover {
+    .trap-btn1:hover {
         background: linear-gradient(145deg, #6b4310, #55350b);
         transform: translateY(-3px);
     }
@@ -151,7 +151,7 @@ body {
         transform: translateY(-3px);
     }
 
-    #notification {
+    #notification1 {
         display: none;
         color: white;
         background-color: #7e4a12;
@@ -170,11 +170,11 @@ body {
         animation: slideDown 0.5s ease forwards;
     }
 
-    #notification.fade-out {
+    #notification1.fade-out {
         animation: slideUp 0.5s ease forwards;
     }
 
-    #progress-bar {
+    #progress-bar1 {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -208,7 +208,7 @@ body {
         }
     }
 
-    #container {
+    #container1 {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(5, 1fr);
@@ -252,7 +252,7 @@ body {
         z-index: 1;
     }
 
-    #trap-selector {
+    #trap-selector1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -268,7 +268,7 @@ body {
         margin: 0 auto;
     }
 
-    .trap-btn {
+    .trap-btn1 {
         background: linear-gradient(145deg, #a96823, #7e4a12);
         border: none;
         color: white;
@@ -285,12 +285,12 @@ body {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .trap-btn:hover {
+    .trap-btn1:hover {
         background: linear-gradient(145deg, #6b4310, #55350b);
         transform: translateY(-3px);
     }
 
-    #trap-count {
+    #trap-count1 {
         font-size: 36px;
         color: white;
         font-weight: bold;
@@ -319,7 +319,7 @@ body {
         transform: translateY(-3px);
     }
 
-    #notification {
+    #notification1 {
         display: none;
         color: white;
         background-color: #7e4a12;
@@ -338,11 +338,11 @@ body {
         animation: slideDown 0.5s ease forwards;
     }
 
-    #notification.fade-out {
+    #notification1.fade-out {
         animation: slideUp 0.5s ease forwards;
     }
 
-    #progress-bar {
+    #progress-bar1 {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -352,7 +352,7 @@ body {
     }
 }
 
-canvas#particleCanvas {
+canvas#particleCanvas1 {
 position: fixed;
 top: 0;
 left: 0;
