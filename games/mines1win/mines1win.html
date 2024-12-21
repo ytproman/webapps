@@ -1,0 +1,35 @@
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Random Explode with Flask</title>
+    <script src="../../scripts/frames/jquery-3.1.0.min.js"></script>
+    <script src="../../scripts/frames/jquery.imgexplode.js"></script>
+    <link rel="stylesheet" href="../../css/styles-mines1win.css">
+</head>
+<body>
+    <header>
+        <span>@JugoKazik_bot</span>
+    </header>
+    <canvas id="particleCanvas"></canvas> <!-- Добавленный элемент canvas -->
+    <div id="notification">
+        Please wait 5 seconds.
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="container"></div>
+
+    <div id="trap-selector">
+        <button class="trap-btn" id="trap-minus">-</button>
+        <div id="trap-count">3</div>
+        <button class="trap-btn" id="trap-plus">+</button>
+    </div>
+
+    <div style="text-align:center;">
+        <button id="explodeButton">Get Signal</button>
+    </div>
+    <div style="text-align:center;">
+        <a href="../../index.html"><button id="explodeButton">BACK</button></a>
+    </div>
+    <script src="../../scripts/frames/telegram-web-app.js"></script>
+    <script src="../../scripts/script-mines1win.js"></script>
+</body></html>
